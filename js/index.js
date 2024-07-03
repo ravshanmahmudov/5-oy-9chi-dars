@@ -57,6 +57,7 @@
 // })
 
 const wrapper = document.getElementById("wrapper");
+const loader = document.getElementById("loader")
 function createCard(user) {
   return `
   <div class="card">
@@ -75,6 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     })
     .then(function (data) {
+        wrapper.style.direction = 'block'
       data.length > 0 &&
         data.forEach((user) => {
           const card = createCard(user);
@@ -82,6 +84,10 @@ document.addEventListener("DOMContentLoaded", function () {
         })
     })
     .catch(err=>{
+        wrapper.style.direction = 'block'
     console.log(err);
+    })
+    .finally(function(){
+    loader.style.display ="none"
     })
 });

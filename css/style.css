@@ -43,3 +43,9 @@ transition: all 0.8s;
 .card img:hover{
 transform: scale(1.5);
 }
+#loader img{
+    border-radius:50%;
+    margin-left: 350px;
+    margin-top: 50px;
+
+}
